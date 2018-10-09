@@ -10,24 +10,27 @@ class IDictionary {
 class HashTableImpl : public IDictionary {
 private:
 	int size;
-	list<char*>* table;
+	list<pair<int, char*>>* table;
 
 public:
 	HashTableImpl(int capacity) {
 		size = capacity;
-		table = new list<char*>[size];
+		table = new list<pair<int, char*>>[size];
 	} // Constructor. Capacity is the table size for the hash range.
 	void insert(int key, char* value) {
-		table[key%size].push_back(value);
+		table[key%size].push_back(make_pair(key, value));
 	}
 	char* lookup(int key) {
 		auto it = table[key%size].begin();
-		return *it;
+		for(; it != table[key%size].end(); it++)
+			if((*it).first == key) return (*it).second;
+		return NULL;
 	}
 };
 int main(){
 	HashTableImpl H(100);
-	H.insert(10, "Suganth");
-	cout << H.lookup(10) << endl;
+	H.insert(10, (char*)"Suganth");
+	H.insert(110, (char*)"Ilangovan");
+	cout << H.lookup(10) << endl << H.lookup(11) << endl;
 	return 0;
 }
