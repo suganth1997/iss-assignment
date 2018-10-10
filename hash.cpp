@@ -62,56 +62,62 @@ int compare_function(const void* x, const void* y) {
 	auto b = *((pair<int, char*>*)y);
 	return a.first - b.first;
 }
+
 class BSearchDictImpl : public IDictionary {
 private:
-	vector<pair<int, char*>> b_hash;
+	pair<int,char*>* table;
 	int size = 0;
 	int total_size;
 public:
 	BSearchDictImpl(int capacity) {
 		total_size = capacity;
+		table = new pair<int,char*>[capacity];
 	}
-
-	/*
-	void sort() {
-		qsort(&b_hash[0], b_hash.size(), sizeof(pair<int, char*>), compare_function);
-	}
-
-	void insert(int key, char* value) {
-		b_hash.push_back(make_pair(key, value));
+	
+	void insert(int key, char* value){
+		table[size].first = key;
+		table[size].second = value;
 		size++;
-		if (size == total_size) sort();
+		if(size == total_size) sort();
 	}
-
-	void debug() {
-		for (int i = 0; i < total_size; i++)
-			cout << b_hash[i].first << "\t" << b_hash[i].second << endl;
+	void debug(){
+		for(int i=0; i<size; i++){
+			cout << table[i].first << " ";
+		}
+		cout << endl;
 	}
-	char* lookup(int key) {
-		int a = 0, b = total_size;
-		//debug();
-		while (a < b) {
-			int n = a + (b - a) / 2;
-			if (b_hash[n].first == key) return b_hash[n].second;
-			else if (b_hash[n].first > key) b = n;
+	void sort(){
+		qsort(table, size, sizeof(pair<int, char*>), compare_function);
+	}
+	
+	char* lookup(int key){
+		int a = 0, b = size;
+		while(a < b){
+			int n = a + (b-a)/2;
+			if(table[n].first == key) return table[n].second;
+			else if(table[n].first > key) b = n;
 			else a = n;
 		}
 		return NULL;
 	}
-	*/
 };
 
 char* get_cha(int i) {
-	string s = "Hey" + to_string(i);
-	cout << &s[0] << endl;
-	return &s[0];
+	auto s = new string;
+	*s = "Hey" + to_string(i);
+	//cout << &s[0] << endl;
+	return &(*s)[0];
 }
 
-int main(){
+int main(int argc, char** argv){
 	IDictionary* H = new BSearchDictImpl(10);
-	for (int i = 0; i < 10; i++)
-		H->insert(i, get_cha(i));
-	cout << H->lookup(1) << endl;
+	for(int i=10; i>0; i--){
+		H -> insert(i,get_cha(i));
+	}
+	cout << H->lookup(stoi(argv[1])) << endl;
+	//H -> insert(2,"Suganth");
+	//H -> insert(3,"Bro");
+	//cout << H->lookup(2) << " " << H->lookup(3) << endl;
 
 	return 0;
 }
