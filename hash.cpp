@@ -72,9 +72,9 @@ public:
 		total_size = capacity;
 	}
 
+	/*
 	void sort() {
-		std::sort(b_hash.begin(), b_hash.end());
-		//qsort(&b_hash[0], b_hash.size(), sizeof(pair<int, char*>), compare_function);
+		qsort(&b_hash[0], b_hash.size(), sizeof(pair<int, char*>), compare_function);
 	}
 
 	void insert(int key, char* value) {
@@ -98,6 +98,7 @@ public:
 		}
 		return NULL;
 	}
+	*/
 };
 
 char* get_cha(int i) {
