@@ -94,5 +94,7 @@ int main(int argc, char** argv){
     Load_Dict(dict, argv[3]);
     Lookup_Dict(dict, argv[4], argv[5]);
     
-    cout <<
+    cout << argv[1] << "," << insert_count << "," << insert_time << "," << lookup_count << "," << lookup_time << endl;
+    
+    return 0;
 }

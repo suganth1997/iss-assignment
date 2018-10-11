@@ -34,25 +34,24 @@ class ArrayDictImpl : public IDictionary {
 private:
 	int size = 0;
 	int total_capacity;
-	int* keys;
-	char** values;
+    pair<int, char*>* table;
 
 public:
 	ArrayDictImpl(int capacity) {
-		keys = new int[capacity];
-		values = new char*[capacity];
+		table = new pair<int, char*>[capacity];
 		total_capacity = capacity;
 	}
 
 	void insert(int key, char* value) {
-		keys[size] = key;
-		values[size] = value;
+        if(size == total_capacity) throw out_of_range("Number of inserts exceeds capacity");
+		table[size].first = key;
+        table[size].second = value;
 		size++;
 	}
 
 	char* lookup(int key) {
 		for (int i = 0; i < size; i++)
-			if (keys[i] == key) return values[i];
+			if (table[i].first == key) return table[i].second;
 		return (char*)"";
 	}
 };
@@ -75,6 +74,7 @@ public:
 	}
 	
 	void insert(int key, char* value){
+        if(size == total_size) throw out_of_range("Number of inserts exceeds capacity");
 		table[size].first = key;
 		table[size].second = value;
 		size++;
