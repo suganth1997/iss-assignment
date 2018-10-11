@@ -24,7 +24,7 @@ public:
 		auto it = table[key%size].begin();
 		for(; it != table[key%size].end(); it++)
 			if((*it).first == key) return (*it).second;
-		throw logic_error("Does not exist");
+		return (char*)"";
 	}
 };
 
@@ -53,7 +53,7 @@ public:
 	char* lookup(int key) {
 		for (int i = 0; i < size; i++)
 			if (keys[i] == key) return values[i];
-		throw logic_error("Does not exist");
+		return (char*)"";
 	}
 };
 
@@ -98,7 +98,7 @@ public:
 			else if(table[n].first > key) b = n - 1;
 			else a = n + 1;
 		}
-		throw logic_error("Does not exist");
+		return (char*)"";
 	}
 };
 /*
