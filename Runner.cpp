@@ -9,6 +9,31 @@
 using namespace std;
 int insert_count, lookup_count;
 double insert_time, lookup_time = 0;
+
+int parseLine(char* line){
+    // This assumes that a digit will be found and the line ends in " Kb".
+    int i = strlen(line);
+    const char* p = line;
+    while (*p <'0' || *p > '9') p++;
+    line[i-3] = '\0';
+    i = atoi(p);
+    return i;
+}
+int getValue(){ //Note: this value is in KB!
+    FILE* file = fopen("/proc/self/status", "r");
+    int result = -1;
+    char line[128];
+
+    while (fgets(line, 128, file) != NULL){
+        if (strncmp(line, "VmRSS:", 6) == 0){
+            result = parseLine(line);
+            break;
+        }
+    }
+    fclose(file);
+    return result;
+}
+
 double time_taken(struct timespec start, struct timespec end){
     if(start.tv_sec == end.tv_sec)
       return (end.tv_nsec - start.tv_nsec)/1000000.0;
@@ -95,6 +120,6 @@ int main(int argc, char** argv){
     Lookup_Dict(dict, argv[4], argv[5]);
     
     cout << argv[1] << "," << insert_count << "," << insert_time << "," << lookup_count << "," << lookup_time << endl;
-    
+    cout << "Memory used = " << getValue() << " kb" << endl << endl;
     return 0;
 }
