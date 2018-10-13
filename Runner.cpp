@@ -44,6 +44,8 @@ double time_taken(struct timespec start, struct timespec end){
 void Load_Dict(IDictionary* dict, char* insert_file){
     ifstream file;
     file.open(insert_file);
+    string message = (string)insert_file + " does not exist";
+    if(!file) throw runtime_error(message);
     string line;
     int count = 0;
     struct timespec start, end;
@@ -68,6 +70,8 @@ void Load_Dict(IDictionary* dict, char* insert_file){
 void Lookup_Dict(IDictionary* dict, char* lookup_file, char* output_file){
     ifstream file;
     file.open(lookup_file);
+    string message = (string)lookup_file + " does not exist";
+    if(!file) throw runtime_error(message);
     int key;
     int count = 0;
     vector<int> keys;
