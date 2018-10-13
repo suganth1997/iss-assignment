@@ -1,0 +1,74 @@
+hash,1000,4.92318,15,0.018915
+Memory used = 3216 kb
+
+array,1000,4.54078,15,0.063733
+Memory used = 1584 kb
+
+bsearch,1000,4.23291,15,0.018101
+Memory used = 3276 kb
+
+
+
+
+
+hash,10000,28.1463,806,0.244588
+Memory used = 4536 kb
+
+array,10000,22.7352,806,17.1424
+Memory used = 4008 kb
+
+bsearch,10000,26.3026,806,0.398137
+Memory used = 4116 kb
+
+
+
+
+
+hash,100000,210.671,23559,7.41106
+Memory used = 18264 kb
+
+array,100000,179.719,23559,3016.12
+Memory used = 12696 kb
+
+bsearch,100000,199.82,23559,6.28831
+Memory used = 13156 kb
+
+
+
+
+
+hash,1000000,1556.65,149004,39.6079
+Memory used = 130744 kb
+
+array,1000000,1286.76,149004,249546
+Memory used = 76048 kb
+
+bsearch,1000000,1561.94,149004,46.8973
+Memory used = 79676 kb
+
+
+
+
+
+hash,10000000,15698.7,1746869,480.221
+Memory used = 1278152 kb
+
+array,10000000,12867.5,1746869,3.27315e+07
+Memory used = 731156 kb
+
+bsearch,10000000,15721.1,1746869,673.032
+Memory used = 731220 kb
+
+
+
+
+
+hash,100000000,157615,0,0.001335
+Memory used = 12751248 kb
+
+array,100000000,129535,0,0.002152
+Memory used = 7281432 kb
+
+bsearch,100000000,163584,0,0.002395
+Memory used = 7281500 kb
+

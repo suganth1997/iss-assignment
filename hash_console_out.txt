@@ -1,0 +1,114 @@
+$With hash table size 100\n
+hash,1000,1.101,15,0.005778
+Memory used = 3276 kb
+
+hash,10000,11.7692,806,1.3815
+Memory used = 4252 kb
+
+hash,100000,109.86,23559,423.933
+Memory used = 15928 kb
+
+hash,1000000,854.65,149004,52435.7
+Memory used = 107324 kb
+
+hash,10000000,8357.3,1746869,6.12825e+06
+Memory used = 1043564 kb
+
+hash,0,0.003924,0,0.000694
+Memory used = 1656 kb
+
+$With hash table size 1000\n
+hash,1000,1.1253,15,0.004211
+Memory used = 3292 kb
+
+hash,10000,11.1868,806,0.191928
+Memory used = 4252 kb
+
+hash,100000,116.232,23559,61.8853
+Memory used = 15928 kb
+
+hash,1000000,854.533,149004,5562.35
+Memory used = 107332 kb
+
+hash,10000000,8576.75,1746869,741394
+Memory used = 1043648 kb
+
+hash,0,0.003868,0,0.000672
+Memory used = 1764 kb
+
+$With hash table size 10000\n
+hash,1000,1.13369,15,0.004041
+Memory used = 3132 kb
+
+hash,10000,11.9846,806,0.167868
+Memory used = 4520 kb
+
+hash,100000,117.88,23559,10.0839
+Memory used = 16164 kb
+
+hash,1000000,864.314,149004,582.231
+Memory used = 107496 kb
+
+hash,10000000,8314.47,1746869,77342.6
+Memory used = 1043748 kb
+
+hash,0,0.00395,0,0.000699
+Memory used = 3096 kb
+
+$With hash table size 100000\n
+hash,1000,1.10559,15,0.003907
+Memory used = 5232 kb
+
+hash,10000,11.1101,806,0.089994
+Memory used = 6684 kb
+
+hash,100000,109.928,23559,4.18398
+Memory used = 18232 kb
+
+hash,1000000,832.195,149004,78.0594
+Memory used = 109600 kb
+
+hash,10000000,8495.07,1746869,7828.07
+Memory used = 1045928 kb
+
+hash,0,0.004818,0,0.000684
+Memory used = 5076 kb
+
+$With hash table size 1000000\n
+hash,1000,1.1224,15,0.003965
+Memory used = 26664 kb
+
+hash,10000,11.12,806,0.096923
+Memory used = 27908 kb
+
+hash,100000,110.316,23559,3.6526
+Memory used = 39240 kb
+
+hash,1000000,835.293,149004,32.8543
+Memory used = 130700 kb
+
+hash,10000000,8771.83,1746869,1033.39
+Memory used = 1067008 kb
+
+hash,0,0.007284,0,0.001063
+Memory used = 26524 kb
+
+$With hash table size 10000000\n
+hash,1000,1.12121,15,0.004278
+Memory used = 237780 kb
+
+hash,10000,10.9758,806,0.103687
+Memory used = 238724 kb
+
+hash,100000,112.402,23559,3.65161
+Memory used = 250272 kb
+
+hash,1000000,828.734,149004,26.6181
+Memory used = 341764 kb
+
+hash,10000000,8687.91,1746869,352.544
+Memory used = 1277944 kb
+
+hash,0,0.009121,0,0.000787
+Memory used = 237260 kb
+
